@@ -34,7 +34,7 @@ The application is deployed on Netlify: https://sensational-santa-2024.netlify.a
 1. Clone the repository
 
 bash
-git clone https://github.com/velascodeuse/Christmas-santa-1.git
+git clone https://github.com/velascodeuse/my-secret-santa-react.git
 cd Christmas-santa-1
 
 2. Install dependencies
@@ -59,16 +59,15 @@ The application will run at http://localhost:3000.
  # 📸 Screenshots
 
 1. Admin Panel for Participant Management
-https://github.com/velascodeuse/Christmas-santa-1/blob/main/admin_panel.png
-
+https://github.com/velascodeuse/my-secret-santa-react/blob/5f7b41edd74bd370a38e430e8598fce2dd2338dd/screenshots/admin_panel.png
 
 2. Welcome Screen for Participants
 
-https://github.com/velascodeuse/Christmas-santa-1/blob/main/welcome_screen.png
+https://github.com/velascodeuse/my-secret-santa-react/blob/5f7b41edd74bd370a38e430e8598fce2dd2338dd/screenshots/welcome_screen.png
 
 
 3. Secret Santa Result Page
-https://github.com/velascodeuse/Christmas-santa-1/blob/main//result_screen.png
+https://github.com/velascodeuse/my-secret-santa-react/blob/5f7b41edd74bd370a38e430e8598fce2dd2338dd/screenshots/result_screen.png
 
 
 
