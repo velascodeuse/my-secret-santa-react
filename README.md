@@ -58,15 +58,21 @@ The application will run at http://localhost:3000.
  
  # 📸 Screenshots
 
-1. Welcome Screen for Participants
+1. Admin Panel for Participant Management
+https://github.com/velascodeuse/Christmas-santa-1/blob/main/admin_panel.png
+
+
+2. Welcome Screen for Participants
+
+https://github.com/velascodeuse/Christmas-santa-1/blob/main/welcome_screen.png
+
+
+3. Secret Santa Result Page
+https://github.com/velascodeuse/Christmas-santa-1/blob/main//result_screen.png
 
 
 
-2. Secret Santa Result Page
 
-
-
-3. Admin Panel for Participant Management
 
 
 # 📬 Feedback

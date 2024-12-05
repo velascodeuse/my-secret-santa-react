@@ -48,16 +48,16 @@ const MainPage = () => {
       );
   };
 
-  // Lancer le tirage
+  // Lancer le tirage en laissant un délai entre chaque envoi de mail pour éviter la surcharge
   const launchDraw = () => {
     if (participants.length < 2) {
       alert('Veuillez ajouter au moins 2 participants.');
       return;
     }
-
+  
     const shuffled = [...participants];
     let isValid = false;
-
+  
     // Répétez jusqu'à ce que le tirage soit valide (pas de correspondance avec soi-même)
     while (!isValid) {
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -66,30 +66,35 @@ const MainPage = () => {
       }
       isValid = shuffled.every((participant, index) => participant.email !== participants[index].email);
     }
-
-    // Assigner les résultats et envoyer les e-mails
-    participants.forEach((participant, index) => {
+  
+    // Fonction récursive pour envoyer les e-mails un par un avec un délai
+    const sendEmailsSequentially = (index) => {
+      if (index >= participants.length) {
+        alert('Le tirage est terminé et les e-mails ont été envoyés !');
+        return;
+      }
+  
+      const participant = participants[index];
       const receiver = shuffled[index];
       const token = btoa(JSON.stringify({ giver: participant.name, receiver: receiver.name }));
-      const revealLink = `${window.location.origin}/reveal?token=${token}`;
+      const revealLink = `${window.location.origin}/reveal?token=${encodeURIComponent(token)}`;
 
+  
       sendEmail(participant, receiver, revealLink);
-
+  
       // Sauvegarder les résultats dans localStorage
       const savedResults = JSON.parse(localStorage.getItem('secretSantaResults')) || [];
       savedResults.push({ token, giver: participant.name, receiver: receiver.name });
       localStorage.setItem('secretSantaResults', JSON.stringify(savedResults));
-
-      // Vérifier dans la console les résultats du tirage
-      // console.log('Résultat du tirage pour ce participant :', {
-      //   giver: participant.name,
-      //   receiver: receiver.name,
-      //   link: revealLink,
-      // });
-    });
-
-    alert('Le tirage est terminé et les e-mails ont été envoyés !');
+  
+      // Appel récursif avec un délai (par exemple, 2 secondes entre les envois)
+      setTimeout(() => sendEmailsSequentially(index + 1), 2000);
+    };
+  
+    // Démarrer l'envoi
+    sendEmailsSequentially(0);
   };
+  
 
   // Test d'envoi d'un e-mail
   // const testEmail = () => {

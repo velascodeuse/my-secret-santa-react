@@ -29,7 +29,9 @@ const RevealPage = () => {
 
     if (token) {
       try {
-        const data = JSON.parse(atob(token));
+        // Décoder le token avec decodeURIComponent pour éviter les erreurs dues aux caractères spéciaux
+        const data = JSON.parse(atob(decodeURIComponent(token)));
+        console.log('Token décodé avec succès :', data); // Debug : Voir le contenu du token dans la console
         setReceiverName(data.receiver);
 
         // Afficher le nom après un délai
@@ -37,7 +39,7 @@ const RevealPage = () => {
           setShowName(true);
         }, 2000); // Délai de 2 secondes
       } catch (err) {
-        console.error(err);
+        console.error('Erreur lors du décodage du token :', err);
         setError('Lien invalide ou expiré.');
       }
     } else {
