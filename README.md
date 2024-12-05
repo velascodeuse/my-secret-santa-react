@@ -11,7 +11,7 @@ Ajoutant des fonctionnalités festives pour une ambiance conviviale et joyeuse.
 N'hésitez pas à explorer le code, l'adapter à vos propres événements ou me faire part de vos retours. 🎄✨
  
 
- # Why? 🇬🇧
+ # Why? 🇬🇧🇺🇸
 
 This project was created as a personal initiative to organize a "Secret Santa" draw for a Christmas dinner with friends in December 2024.
 
