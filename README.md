@@ -27,7 +27,7 @@ Feel free to explore the code, adapt it to your own events, or share your feedba
 
 # Web deployement
 
-The application is deployed on Netlify: https://sensational-santa-2024.netlify.app
+The application is deployed on Netlify: https://profound-torrone-59d359.netlify.app
 
 # 🛠️ Installation and Usage
 
